@@ -1,0 +1,64 @@
+<section class="homeContacts" id="contacts">
+    <div class="container">
+        <div class="homeContacts-items">
+            {% for list in options.contacts_block.items %}
+                <div class="homeContacts-items__item">
+                    <div class="homeContacts-items__name">
+                        <div class="icon">
+                            <img src="{{ list.icon }}" alt="">
+                        </div>
+                        <div class="text bold">{{list.title}}</div>
+                    </div>
+                    <div class="homeContacts-items__value">{{list.value}}</div>
+                </div>
+            {% endfor %}
+
+
+        </div>
+        <div class="homeContacts-contacts">
+            <div class="homeContacts-contacts__block">
+                <div class="section-h3 bold">{{ options.contacts_block.map_title }}</div>
+                <div class="phone item">
+                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.2353 11.4726C14.2326 11.4726 13.248 11.3158 12.3151 11.0075C11.8579 10.8515 11.2959 10.9946 11.0169 11.2812L9.17541 12.6713C7.03981 11.5313 5.72432 10.2162 4.5999 8.09667L5.94913 6.30316C6.29966 5.95309 6.4254 5.44172 6.27476 4.96191C5.96512 4.02405 5.80783 3.03999 5.80783 2.03687C5.80787 1.3122 5.21832 0.722656 4.4937 0.722656H1.48604C0.761423 0.722656 0.171875 1.3122 0.171875 2.03682C0.171875 10.3429 6.92922 17.1002 15.2353 17.1002C15.9599 17.1002 16.5494 16.5106 16.5494 15.786V12.7867C16.5494 12.0622 15.9598 11.4726 15.2353 11.4726Z"
+                              fill="#B3B3B3"/>
+                    </svg>
+                    <a href="tel:{{ options.contacts_block.phone }}">{{ options.contacts_block.phone }}</a>
+                </div>
+                <div class="address item">
+                    <svg width="17" height="21" viewBox="0 0 17 21" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.1511 3.00186C12.6049 1.4557 10.548 0.603516 8.36065 0.603516C6.17328 0.603516 4.11637 1.4557 2.57021 3.00186C1.02406 4.54801 0.171875 6.60492 0.171875 8.79229C0.171875 10.7049 0.846408 12.5647 2.06778 14.0331C2.38146 14.4051 2.72844 14.7548 3.1004 15.0657L7.95538 19.9235C8.06919 20.0345 8.21353 20.09 8.36065 20.09C8.50777 20.09 8.65212 20.0345 8.76593 19.9235L13.6209 15.0657C13.9929 14.7548 14.3398 14.4051 14.6507 14.0331C15.8749 12.5647 16.5494 10.7049 16.5494 8.79229C16.5494 6.60492 15.6972 4.54801 14.1511 3.00186ZM8.36065 13.8943C5.64864 13.8943 3.45294 11.6958 3.45294 8.98383C3.45294 6.27459 5.64864 4.07611 8.36065 4.07611C11.0727 4.07611 13.2684 6.27459 13.2684 8.98383C13.2684 11.6958 11.0727 13.8943 8.36065 13.8943Z"
+                              fill="#B3B3B3"/>
+                    </svg>
+                    <span>{{ options.contacts_block.address }}</span>
+                </div>
+                <div class="address item">
+                    <svg width="17" height="14" viewBox="0 0 17 14" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.83438 9.04301C8.67969 9.13969 8.50567 9.17837 8.35098 9.17837C8.19629 9.17837 8.02227 9.13969 7.86758 9.04301L0.171875 4.34438V10.5899C0.171875 11.9241 1.25469 13.0069 2.58887 13.0069H14.1324C15.4666 13.0069 16.5494 11.9241 16.5494 10.5899V4.34438L8.83438 9.04301Z"
+                              fill="#B3B3B3"/>
+                        <path d="M14.1324 0.940918H2.58886C1.44804 0.940918 0.481243 1.75303 0.249211 2.83584L8.37031 7.78585L16.4721 2.83584C16.24 1.75303 15.2732 0.940918 14.1324 0.940918Z"
+                              fill="#B3B3B3"/>
+                    </svg>
+                    <a href="mailto:{{ options.contacts_block.email }}">{{ options.contacts_block.email }}</a>
+                </div>
+                <div class="worktime item">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.36065 0.0585938C3.84529 0.0585938 0.171875 3.732 0.171875 8.24737C0.171875 12.7628 3.84529 16.4361 8.36065 16.4361C12.876 16.4361 16.5494 12.7627 16.5494 8.24737C16.5494 3.732 12.876 0.0585938 8.36065 0.0585938ZM8.36065 14.6462C4.83221 14.6462 1.96177 11.7758 1.96177 8.24737C1.96177 4.71911 4.83221 1.84849 8.36065 1.84849C11.8891 1.84849 14.7595 4.71911 14.7595 8.24737C14.7595 11.7758 11.8891 14.6462 8.36065 14.6462Z"
+                              fill="#B3B3B3"/>
+                        <path d="M9.06947 8.25644V4.82435C9.06947 4.44113 8.75893 4.13059 8.37586 4.13059C7.99267 4.13059 7.6821 4.44113 7.6821 4.82435V8.47808C7.6821 8.48898 7.68479 8.49922 7.68532 8.51013C7.67619 8.69877 7.74118 8.89031 7.88525 9.0344L10.469 11.6179C10.74 11.8889 11.1792 11.8889 11.45 11.6179C11.7208 11.3469 11.721 10.9077 11.45 10.6369L9.06947 8.25644Z"
+                              fill="#B3B3B3"/>
+                    </svg>
+                    <span>{{ options.contacts_block.work_time }}</span>
+                </div>
+                <a class="btn btn-blue" href="{{ options.contacts_block.button_link }}">{{ options.contacts_block.button_text }}</a>
+            </div>
+            <div class="homeContacts-contacts__map">
+                <div id="map" data-lat="{{ options.contacts_block.x }}" data-lon="{{ options.contacts_block.y }}"></div>
+            </div>
+        </div>
+    </div>
+</section>

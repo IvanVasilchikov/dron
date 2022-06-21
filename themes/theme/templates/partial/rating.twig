@@ -1,0 +1,26 @@
+<div class="homeRatings" id="rate">
+    <div class="container">
+        <div class="section-h2 text-center bold">{{options.rating.title}}</div>
+        <div class="homeRatings-desc">{{options.rating.desc}}</div>
+        <div class="homeRatings-slider swiper">
+            <div class="swiper-wrapper">
+                {% for list in options.rating.items %}
+                    <div class="swiper-slide homeRatings-slider__slide">
+                        <div class="image">
+                            <picture><img class="lazyload" loading="lazy"
+                                          data-src="{{ list.image }}" width="105"
+                                          height="40"></picture>
+                        </div>
+                        <div class="score bold">{{ list.rating }}</div>
+                        <div class="caption">{{list.max}}</div>
+                    </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+        <div class="homeRatings-figure"><img class="lazyload" loading="lazy"
+                                             data-src="{{ theme.link }}/static/img/decorate/ratings.svg"
+                                             width="135" height="152"></div>
+    </div>
+</div>

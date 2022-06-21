@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
     var splide = document.createElement("script");
-    splide.src = "/js/swiper.min.js";
+    splide.src = "/wp-content/themes/theme/static/js/swiper.min.js";
     splide.onload = function () {
 
         var interiors;
@@ -94,7 +94,7 @@ window.addEventListener("load", function () {
     };
     document.body.appendChild(splide);
 
-    var target_date = new Date().getTime() + (1000 * 3600 * 48); // set the countdown date
+    var target_date = new Date().getTime() + (1000 * 3600 * 72); // set the countdown date
     var days, hours, minutes, seconds; // variables for time units
 
     var timers = document.querySelectorAll('.fleets-banner__timer');

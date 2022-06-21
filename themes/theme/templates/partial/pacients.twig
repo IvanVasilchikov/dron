@@ -1,0 +1,26 @@
+<div class="homeClients" id="clients">
+    <div class="container">
+        <div class="section-h2 text-center bold">{{ options.pacients.title }}</div>
+        <div class="homeClients-slider swiper">
+            <div class="swiper-wrapper">
+                {% for list in options.pacients.images %}
+                    <div class="swiper-slide homeClients-slider__slide">
+                        <div class="image">
+                            <picture>
+                                <source srcset="{{ list.image_640px }}"
+                                        type="image/jpg" media="(min-width: 640px)">
+                                <img class="lazyload" loading="lazy"
+                                     data-src="{{ list.image_300px }}" width="300"
+                                     height="390">
+                            </picture>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <div class="swiper-button-prev homeClients-slider__arrow homeClients-slider__prev"></div>
+            <div class="swiper-button-next homeClients-slider__arrow homeClients-slider__next"></div>
+            <div class="swiper-pagination homeClients-slider__pagination"></div>
+        </div>
+    </div>
+</div>

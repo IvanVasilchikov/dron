@@ -1,0 +1,40 @@
+<div class="popup__wrp" id="callback">
+    <div class="popup popup-callback">
+        <div class="popup-close"><a href="#close">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.7904 12.4999L24.5249 2.76513C25.1584 2.13192 25.1584 1.10811 24.5249 0.474906C23.8917 -0.158302 22.8679 -0.158302 22.2346 0.474906L12.4999 10.2097L2.76535 0.474906C2.13185 -0.158302 1.10834 -0.158302 0.475128 0.474906C-0.158376 1.10811 -0.158376 2.13192 0.475128 2.76513L10.2096 12.4999L0.475128 22.2347C-0.158376 22.8679 -0.158376 23.8917 0.475128 24.5249C0.790694 24.8408 1.20562 24.9995 1.62024 24.9995C2.03487 24.9995 2.44949 24.8408 2.76535 24.5249L12.4999 14.7902L22.2346 24.5249C22.5505 24.8408 22.9651 24.9995 23.3798 24.9995C23.7944 24.9995 24.209 24.8408 24.5249 24.5249C25.1584 23.8917 25.1584 22.8679 24.5249 22.2347L14.7904 12.4999Z"
+                          fill="white"/>
+                </svg>
+            </a></div>
+        <div class="popup-content">
+            <div class="section-h3 bold blue">{{ options.form_popup.title }}</div>
+            <div class="popup-content__doctor">
+                <picture>
+                    <source srcset="{{  options.form_popup.image}}.webp" type="image/webp"/>
+                    <img class="lazyload" loading="lazy"
+                         data-src="{{  options.form_popup.image}}" width="359" height="359"
+                         src="{{  options.form_popup.image}}"/>
+                </picture>
+                <div class="caption"><span class="blue bold">{{ options.form_popup.name }}</span>{{ options.form_popup.work_position  }}
+                </div>
+            </div>
+            <form action="">
+                <div class="form__field">
+                    <div class="input input-text">
+                        <input type="text" placeholder="Ваше имя" required="required"/>
+                    </div>
+                </div>
+                <div class="form__field">
+                    <div class="input input-tel">
+                        <input type="tel" placeholder="+7 (900) 000-00-00" required="required"/>
+                    </div>
+                </div>
+                <div class="form__submit">
+                    <button class="btn btn-blue" type="submit">Отправить</button>
+                </div>
+                <div class="form__agreement">Нажимая кнопку “Отправить” вы соглашаетесь с Политикой <a href="{{ options.form_popup.link  }}">обработки
+                        персональных данных</a></div>
+            </form>
+        </div>
+    </div>
+</div>

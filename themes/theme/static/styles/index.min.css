@@ -2451,7 +2451,7 @@ button.swiper-pagination-bullet {
     }
 
     .homeAbout-image__tooltips .tooltip-top-left::after {
-        top: -5px;
+        top: 15px;
         left: 15px
     }
 

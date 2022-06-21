@@ -276,9 +276,14 @@ class StarterSite extends Timber\Site {
 
 
         wp_enqueue_script('js-main', get_template_directory_uri() . '/static/js/main.js', array(), $version, true);
+        wp_enqueue_style('css-style', get_template_directory_uri() . '/static/styles/main.min.css', null, $version);
         if(is_front_page()){
             wp_enqueue_script('js-vendor', get_template_directory_uri() . '/static/js/index.js', array(),$version, true);
             wp_enqueue_style('css-page', get_template_directory_uri() . '/static/styles/index.min.css', null, $version);
+        }
+        if(is_page(278)){
+            wp_enqueue_script('js-vendor', get_template_directory_uri() . '/static/js/stocks.js', array(), '1.0.2', true);
+            wp_enqueue_style('css-page', get_template_directory_uri() . '/static/styles/stocks.min.css', null, $version);
         }
       /*  if(is_singular('locations')){
             wp_enqueue_script('js-vendor', get_template_directory_uri() . '/static/js/page/location-detail.js', array(), '1.0.2', true);
@@ -286,16 +291,14 @@ class StarterSite extends Timber\Site {
         if(is_singular('services')){
             wp_enqueue_script('js-vendor', get_template_directory_uri() . '/static/js/page/services-detail.js', array(), '1.0.2', true);
         }
-        if(is_page(205)){
-            wp_enqueue_script('js-vendor', get_template_directory_uri() . '/static/js/page/about.js', array(), '1.0.2', true);
-        }
+
         if(is_page(243)){
             wp_enqueue_script('js-vendor', get_template_directory_uri() . '/static/js/page/vacancy.js', array(), '1.0.2', true);
         }
         if(is_page(259)){
             wp_enqueue_script('js-vendor', get_template_directory_uri() . '/static/js/lib/fancybox.esm.js', array(), '1.0.2', true);
         }*/
-        wp_enqueue_style('css-style', get_template_directory_uri() . '/static/styles/main.min.css', null, $version);
+
     }
 
 }

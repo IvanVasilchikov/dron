@@ -1,0 +1,107 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <main>
+        <div class="pageTitle">
+            <div class="container">
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a class="is-active" href="">{{ data.title }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <section class="stocks">
+            <div class="container">
+                <div class="section-h2 bold violet">{{ data.title }}</div>
+                {% for item in data.stocks %}
+                {% if item.type == "default" %}
+                <div class="stocks-banner fleets-banner" id="fleets">
+                    {% endif %}
+                    {% if item.type == "inj" %}
+                    <div class="stocks-banner fleets-banner inj-banner" id="fleets">
+                        {% endif %}
+                        {% if item.type == "panda" %}
+                        <div class="stocks-banner fleets-banner panda-banner" id="fleets">
+                            {% endif %}
+                            {% if item.type == "profile" %}
+                            <div class="stocks-banner fleets-banner profile-banner" id="fleets">
+                                {% endif %}
+                                {% if item.type == "lips" %}
+                                <div class="stocks-banner fleets-banner lips-banner" id="fleets">
+                                    {% endif %}
+                                    {% if item.type == "intim" %}
+                                    <div class="stocks-banner fleets-banner intim-banner" id="fleets">
+                                        {% endif %}
+                                        <div class="container">
+                                            <div class="fleets-banner__content">
+                                                <div class="section-h3 bold">
+                                                    {{item.title}}
+                                                </div>
+                                                <div class="fleets-banner__price">
+                                                    <div class="price">
+                                                        <div class="price-old">{{item.price}}</div>
+                                                        <div class="price-new">{{item.second_price}}</div>
+                                                    </div>
+                                                    <div class="sale">{{ item.percent }}</div>
+                                                </div>
+                                                <div class="fleets-banner__image {{ (item.height==1)?"fullheight":"" }}">
+                                                    <picture>
+                                                        <source srcset="{{ item.image_1152px}}"
+                                                                type="image/png" media="(min-width: 1152px)">
+                                                        <source srcset="{{ item.image_960px}}"
+                                                                type="image/png" media="(min-width: 960px)">
+                                                        <source srcset="{{ item.image_640px}}"
+                                                                type="image/png" media="(min-width: 640px)">
+                                                        <source srcset="{{ item.image_480px}}"
+                                                                type="image/png" media="(min-width: 480px)">
+                                                        <img class="lazyload" loading="lazy"
+                                                             data-src="{{ item.image_232px}}"
+                                                             width="232" height="260">
+                                                    </picture>
+                                                </div>
+                                                <div class="fleets-banner__timer" id="timer">
+                                                    <div class="days">
+                                                        <div class="value"><span>0</span><span>2</span></div>
+                                                        <div class="caption">дней</div>
+                                                    </div>
+                                                    <div class="divider"></div>
+                                                    <div class="hours">
+                                                        <div class="value"><span>0</span><span>24</span></div>
+                                                        <div class="caption">часов</div>
+                                                    </div>
+                                                    <div class="divider"></div>
+                                                    <div class="minutes">
+                                                        <div class="value"><span>0</span><span>0</span></div>
+                                                        <div class="caption">минут</div>
+                                                    </div>
+                                                    <div class="divider"></div>
+                                                    <div class="seconds">
+                                                        <div class="value"><span>0</span><span>0</span></div>
+                                                        <div class="caption">секунд</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="btn btn-blue" href="#callback">Записаться</a>
+                                        </div>
+                                    </div>
+
+                                    {% endfor %}
+
+
+                                    <div class="stocks-figure">
+                                        <picture><img class="lazyload" loading="lazy"
+                                                      data-src="{{ theme.link }}/static/img/decorate/contacts.svg"
+                                                      width="186" height="131"></picture>
+                                    </div>
+                                </div>
+        </section>
+        {% include "/partial/pacients.twig" %}
+        {% include "/partial/rating.twig" %}
+        {% include "/partial/certificates.twig" %}
+        {% include "/partial/interier.twig" %}
+        {% include "/partial/contacts.twig" %}
+        {% include "/partial/popup.twig" %}
+    </main>
+{% endblock %}
