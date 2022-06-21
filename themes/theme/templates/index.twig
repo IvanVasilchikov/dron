@@ -316,15 +316,15 @@
 							</div>
 							<div class="homeForm-block__title section-h3 bold">{{item.form.title}}</div>
 							<div class="homeForm-block__desc">{{item.desc}}</div>
-							<form class="homeForm-block__form">
+							<form class="homeForm-block__form" action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="POST" data-form="banner">
 								<div class="form__field">
 									<div class="input input-text"><span class="label">Ваше имя</span>
-										<input type="text" placeholder="Иван Иванов"/>
+										<input type="text" name="your-name" placeholder="Иван Иванов"/>
 									</div>
 								</div>
 								<div class="form__field">
 									<div class="input input-tel"><span class="label">Номер телефона</span>
-										<input type="tel" placeholder="+7 (900) 000-00-00"/>
+										<input type="tel" name="your-phone" placeholder="+7 (900) 000-00-00"/>
 									</div>
 								</div>
 								<div class="form__submit">

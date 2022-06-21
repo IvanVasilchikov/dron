@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     case 'mail_sent':
                         _this.reset()
-                        window.location.href = "#thanks";
+                        state(true,"Ваша заявка отправлена")
 
                         _this.querySelectorAll('.err').forEach(function(input){
                             input.classList.remove('err')

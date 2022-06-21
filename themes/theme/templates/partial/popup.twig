@@ -18,15 +18,15 @@
                 <div class="caption"><span class="blue bold">{{ options.form_popup.name }}</span>{{ options.form_popup.work_position  }}
                 </div>
             </div>
-            <form action="">
+            <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="POST" data-form="banner">
                 <div class="form__field">
                     <div class="input input-text">
-                        <input type="text" placeholder="Ваше имя" required="required"/>
+                        <input type="text" placeholder="Ваше имя" name="your-name" required="required"/>
                     </div>
                 </div>
                 <div class="form__field">
                     <div class="input input-tel">
-                        <input type="tel" placeholder="+7 (900) 000-00-00" required="required"/>
+                        <input type="tel" placeholder="+7 (900) 000-00-00" name="your-phone" required="required"/>
                     </div>
                 </div>
                 <div class="form__submit">

@@ -186,7 +186,7 @@ class StarterSite extends Timber\Site {
 		$context['foo']   = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
-		$context['menu']  = new Timber\Menu();
+		$context['menu']  = new Timber\Menu(2);
 		$context['site']  = $this;
         $context['options'] = get_fields('option');
 		return $context;
@@ -276,7 +276,9 @@ class StarterSite extends Timber\Site {
 
 
         wp_enqueue_script('js-main', get_template_directory_uri() . '/static/js/main.js', array(), $version, true);
+        wp_enqueue_script('js-form', get_template_directory_uri() . '/static/js/form.js', array(), $version, true);
         wp_enqueue_style('css-style', get_template_directory_uri() . '/static/styles/main.min.css', null, $version);
+        wp_enqueue_style('css-form', get_template_directory_uri() . '/static/styles/form.css', null, $version);
         if(is_front_page()){
             wp_enqueue_script('js-vendor', get_template_directory_uri() . '/static/js/index.js', array(),$version, true);
             wp_enqueue_style('css-page', get_template_directory_uri() . '/static/styles/index.min.css', null, $version);
