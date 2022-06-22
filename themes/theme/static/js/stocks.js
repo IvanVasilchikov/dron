@@ -94,8 +94,50 @@ window.addEventListener("load", function () {
     };
     document.body.appendChild(splide);
 
-    var target_date = new Date().getTime() + (1000 * 3600 * 72); // set the countdown date
-    var days, hours, minutes, seconds; // variables for time units
+
+    function getCookie(name) {
+        let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+    function setCookie(name, value, options = {}) {
+
+        options = {
+            path: '/',
+            ...options
+        };
+
+        if (options.expires instanceof Date) {
+            options.expires = options.expires.toUTCString();
+        }
+
+        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+        for (let optionKey in options) {
+            updatedCookie += "; " + optionKey;
+            let optionValue = options[optionKey];
+            if (optionValue !== true) {
+                updatedCookie += "=" + optionValue;
+            }
+        }
+
+        document.cookie = updatedCookie;
+    }
+
+
+    var target_date  // set the countdown date
+    var days, hours, minutes, seconds;
+
+    if(getCookie('time')){
+        target_date = getCookie('time');
+    }
+    else{
+        target_date = new Date().getTime() + (1000 * 3600 * 72);
+        var expires = 2 * 60 * 60 * 1000;
+        setCookie('time', target_date, {'max-age': expires});
+    }
 
     var timers = document.querySelectorAll('.fleets-banner__timer');
     timers.forEach(function (el){

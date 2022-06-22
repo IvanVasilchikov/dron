@@ -193,8 +193,17 @@ window.addEventListener("load", function () {
     };
     document.body.appendChild(splide);
 
-    var target_date = new Date().getTime() + (1000 * 3600 * 48);
+    var target_date  // set the countdown date
     var days, hours, minutes, seconds;
+
+    if(getCookie('time')){
+        target_date = getCookie('time');
+    }
+    else{
+        target_date = new Date().getTime() + (1000 * 3600 * 72);
+        var expires = 2 * 60 * 60 * 1000;
+        setCookie('time', target_date, {'max-age': expires});
+    }
 
     var countdown = document.getElementById("timer");
 
