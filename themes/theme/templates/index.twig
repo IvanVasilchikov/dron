@@ -33,15 +33,24 @@
                             <div class="homeAbout-image__tooltips">
                                 {% for coor in item.coord %}
                                     {% if coor.placement=="leftbottom" %}
-                                        <div class="tooltip tooltip-top-right" data-title="{{ coor.name }}"
-                                             style="top: {{ coor.coor.top }}%; left: {{ coor.coor.left }}%"></div>
+                                        <div class="tooltip tooltip-top-right" data-1280-top="{{ coor.coor.top }}"  data-1280-left="{{ coor.coor.left }}" data-title="{{ coor.name }}"
+											 data-640-top="{{attribute(item.coord_laptop,loop.index0).coor.top }}"  data-640-left="{{attribute(item.coord_laptop,loop.index0).coor.left }}"
+											 data-480-top="{{attribute(item.coord_mobile,loop.index0).coor.top }}"  data-480-left="{{attribute(item.coord_mobile,loop.index0).coor.left }}"
+											 data-320-top="{{attribute(item.coord_320px,loop.index0).coor.top }}"  data-320-left="{{attribute(item.coord_320px,loop.index0).coor.left }}"
+											 style="top: {{ coor.coor.top }}%; left: {{ coor.coor.left }}%"></div>
                                     {% endif %}
                                     {% if coor.placement=="righttop" %}
-                                        <div class="tooltip tooltip-bottom-left" data-title="{{ coor.name }}"
+                                        <div class="tooltip tooltip-bottom-left" data-title="{{ coor.name }}"  data-1280-left="{{ coor.coor.left }}" data-title="{{ coor.name }}"
+											 data-640-top="{{attribute(item.coord_laptop,loop.index0).coor.top }}"  data-640-left="{{attribute(item.coord_laptop,loop.index0).coor.left }}"
+											 data-480-top="{{attribute(item.coord_mobile,loop.index0).coor.top }}"  data-480-left="{{attribute(item.coord_mobile,loop.index0).coor.left }}"
+											 data-320-top="{{attribute(item.coord_320px,loop.index0).coor.top }}"  data-320-left="{{attribute(item.coord_320px,loop.index0).coor.left }}"
                                              style="top: {{ coor.coor.top }}%; left: {{ coor.coor.left }}%"></div>
                                     {% endif %}
                                     {% if coor.placement=="rightbottom" %}
-                                        <div class="tooltip tooltip-top-left" data-title="{{ coor.name }}"
+                                        <div class="tooltip tooltip-top-left" data-title="{{ coor.name }}"  data-1280-left="{{ coor.coor.left }}" data-title="{{ coor.name }}"
+											 data-640-top="{{attribute(item.coord_laptop,loop.index0).coor.top }}"  data-640-left="{{attribute(item.coord_laptop,loop.index0).coor.left }}"
+											 data-480-top="{{attribute(item.coord_mobile,loop.index0).coor.top }}"  data-480-left="{{attribute(item.coord_mobile,loop.index0).coor.left }}"
+											 data-320-top="{{attribute(item.coord_320px,loop.index0).coor.top }}"  data-320-left="{{attribute(item.coord_320px,loop.index0).coor.left }}"
                                              style="top: {{ coor.coor.top }}%; left: {{ coor.coor.left }}%"></div>
                                     {% endif %}
                                 {% endfor %}
