@@ -108,3 +108,49 @@ window.addEventListener("load", function () {
     };
     document.body.appendChild(splide);
 });
+
+dotsUpdate();
+window.addEventListener('resize', function () {
+    dotsUpdate();
+})
+
+function dotsUpdate() {
+    var dots = document.querySelectorAll('.homeAbout-image__tooltips .tooltip');
+
+    if(window.innerWidth < 480){
+        dots.forEach(function (el) {
+            var top = el.getAttribute('data-320-top');
+            var left = el.getAttribute('data-320-left');
+            el.style.top = top + "%";
+            el.style.left = left + "%";
+        })
+    }
+    if(window.innerWidth < 640){
+        dots.forEach(function (el) {
+            var top = el.getAttribute('data-480-top');
+            var left = el.getAttribute('data-480-left');
+            el.style.top = top + "%";
+            el.style.left = left + "%";
+        })
+    }
+
+    if(window.innerWidth < 1280){
+        dots.forEach(function (el) {
+            var top = el.getAttribute('data-640-top');
+            var left = el.getAttribute('data-640-left');
+            el.style.top = top + "%";
+            el.style.left = left + "%";
+        })
+    }
+
+    if(window.innerWidth >= 1280){
+        dots.forEach(function (el) {
+            var top = el.getAttribute('data-1280-top');
+            var left = el.getAttribute('data-1280-left');
+            el.style.top = top + "%";
+            el.style.left = left + "%";
+        })
+    }
+
+
+}

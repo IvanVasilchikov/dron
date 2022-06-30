@@ -5,9 +5,11 @@
             <div class="swiper-wrapper grid-container">
                 {% for list in options.interier.images %}
                     <div class="swiper-slide homeInterior-slider__slide {{ (list.width==1)?"fullwidth":"" }}">
-                        <picture><img class="lazyload" loading="lazy"
-                                      data-src="{{list.image}}" width="300"
-                                      height="230"></picture>
+                        <div class="image">
+                            <picture><img class="lazyload" loading="lazy"
+                                          data-src="{{list.image}}" width="300"
+                                          height="230"></picture>
+                        </div>
                     </div>
                 {% endfor %}
 
